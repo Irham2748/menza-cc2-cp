@@ -1,5 +1,5 @@
 "use client";
-import WhatsappButton from "@/components/Whatsapp";
+import WhatsappButton from "../components/WhatsApp";
 import Image from "next/image";
 import Link from "next/link";
 

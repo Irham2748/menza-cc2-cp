@@ -1,17 +1,36 @@
 'use client'
-import { getData } from "@/services/company_overview";
 import Image from "next/image";
 
 export default async function CompanyOverview() {
-  const companies = await getData(
-    "http://localhost:3000/api/company_overview"
-  );
-  console.log(companies);
+  const data = [
+  {
+    id: 1,
+    title: "Our History",
+    image : "https://images.pexels.com/photos/6248993/pexels-photo-6248993.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 2,
+    title: "Our Culture",
+    image: "https://images.pexels.com/photos/17864141/pexels-photo-17864141/free-photo-of-cup-of-cappuccino-and-plant.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 3,
+    title: "Our Teams",
+    image: "https://images.pexels.com/photos/13741471/pexels-photo-13741471.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];
+  // const companies = await getData(
+  //   "http://localhost:3000/api/company_overview"
+  // );
+  // console.log(companies);
   return (
     <div className="flex min-h-screen items-center justify-center bg-dark">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {companies.data.length > 0 &&
-          companies.data.map((company: any) => (
+        {data.length > 0 &&
+          data.map((company: any) => (
             <div key={company.id} className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow rounded-2xl hover:shadow-xl hover:shadow-black/30">
               <div className="h-96 w-72 vsm:mt-10">
                 <Image
